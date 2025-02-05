@@ -18,3 +18,31 @@ Public Subnets: Bastion Host & NAT Gateway.
 Private Subnets: Web/Application servers (EC2 instances) and Database (Amazon RDS).
 Load Balancer: ALB to distribute traffic.
 Security Groups: Restricted access at different layers
+
+# Deployment Steps
+
+1️⃣ Initialize Terraform
+
+terraform init
+
+2️⃣ Plan the Deployment
+
+terraform plan
+
+3️⃣ Apply the Configuration
+
+terraform apply -auto-approve
+
+4️⃣ Verify the Deployment
+
+Check AWS Console for created resources.
+
+Validate EC2 instances, ALB, and RDS.
+
+5️⃣ Destroy Infrastructure (Optional)
+
+terraform destroy -auto-approve
+
+# Conclusion
+
+This Terraform-driven 3-tier AWS deployment establishes a scalable, secure, and highly available architecture, leveraging infrastructure-as-code (IaC) best practices. By modularizing components (web, app, database) and isolating network layers, it ensures fault tolerance, simplified maintenance, and controlled access between tiers. The use of auto-scaling groups, ALBs, and RDS guarantees resilience and performance, while security groups enforce least-privilege principles. This foundation supports seamless scaling, cost optimization, and compliance readiness, providing a robust blueprint for modern cloud-native applications. Future enhancements like HTTPS, WAF, or secrets management can further strengthen production readiness.
